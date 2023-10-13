@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlighnSolutiuon", "AlighnSolutiuon\AlighnSolutiuon.csproj", "{AA230391-A2E3-43BD-8C72-FA28AAF1659D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlighnSolution", "AlighnSolution\AlighnSolution.csproj", "{AA230391-A2E3-43BD-8C72-FA28AAF1659D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
