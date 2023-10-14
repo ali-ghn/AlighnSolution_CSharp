@@ -64,6 +64,8 @@ public class UserController : ControllerBase, IUserController
                 _logger.Log(LogLevel.Error, $"{DateTime.UtcNow} - {error.Code} - {error.Description}");
             return StatusCode(HttpStatusCode.InternalServerError.ToInt(), GenericStatus.SomethingWentWrong);
         }
+
+        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
         
         #endregion
 

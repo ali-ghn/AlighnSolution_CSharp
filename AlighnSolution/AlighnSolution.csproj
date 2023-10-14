@@ -30,6 +30,14 @@
 
 
 
+
+
+    <ItemGroup>
+      <None Include="wwwroot\EmailConfirmationTemplate.html" />
+      <None Include="wwwroot\logo.jpg" />
+    </ItemGroup>
+
+
     </ItemGroup>
 
 
