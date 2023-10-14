@@ -1,9 +1,14 @@
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace AlighnSolution.Database;
 
 public class DatabaseObject
 {
+    [BsonId]
+    [BsonElement("_id")]
+    [BsonRepresentation(BsonType.String)]
+    public string Id { get; set; }
     [Attributes.DateTimeTimestamp]
     public DateTime CreatedAt { get; set; }
     [Attributes.DateTimeTimestamp]
