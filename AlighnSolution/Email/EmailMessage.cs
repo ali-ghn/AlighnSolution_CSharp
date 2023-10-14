@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace AlighnSolution.Email;
 
 public class EmailMessage
@@ -6,24 +8,11 @@ public class EmailMessage
 
     public EmailMessage(Dictionary<string, string> keyValuePair, string message)
     {
-        foreach (var word in message.Split(" "))
+        Regex re = new(@"\{(\w*?)\}", RegexOptions.Compiled);
+        MessageBody = re.Replace(message, delegate(Match match)
         {
-            if (word.StartsWith("{") && word.EndsWith("}"))
-                if (message.Split(" ").Last() != word)
-                {
-                    var sanitizedKey = word.Replace("{", "").Replace("}", "");
-                    MessageBody += keyValuePair.Single(pair => pair.Key == sanitizedKey).Value + " ";
-                }
-                else
-                {
-                    var sanitizedKey = word.Replace("{", "").Replace("}", "");
-                    MessageBody += keyValuePair.Single(pair => pair.Key == sanitizedKey).Value + " ";
-                }
-            else
-                if (message.Split(" ").Last() != word)
-                    MessageBody += word + " ";
-                else
-                    MessageBody += word;
-        }
+            var key = match.Groups[1].Value;
+            return keyValuePair[key];
+        });
     }
 }

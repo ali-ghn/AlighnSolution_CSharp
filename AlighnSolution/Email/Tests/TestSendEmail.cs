@@ -13,9 +13,9 @@ public class TestSendEmail
             {"Email_Verification_Token", "552233"},
             {"Username", "Alighn"}
         };
-        var message = "Hello {Username},\n Your email confirmation token is: {Email_Verification_Token}\n Best regards";
+        var message = "Hello {Username},\n Your email confirmation token is: {Email_Verification_Token} \n Best regards";
         var emailMessage = new EmailMessage(keyValuePair, message);
-        await emailService.Send("alighndev@protonmail.com", emailMessage.MessageBody, "Email Confirmation",
-            "info@alighn.dev");
+        await emailService.Send("alighndev@protonmail.com", emailMessage.MessageBody, "Your email confirmation token", 
+            "Alighn.dev", "info@alighn.dev");
     }
 }
