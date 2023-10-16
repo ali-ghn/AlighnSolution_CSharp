@@ -3,6 +3,8 @@ using System.Net.Mail;
 using System.Net.Security;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.Extensions.FileProviders;
+using ZstdSharp.Unsafe;
 
 namespace AlighnSolution.Email;
 
@@ -31,9 +33,8 @@ public class EmailService : IEmailService
     {
         try
         {
-            await using var sr = Assembly.GetExecutingAssembly().GetManifestResourceStream($"wwwroot/{templateName}.html");
-            var reader = new StreamReader(sr);
-            return await reader.ReadToEndAsync();
+            var sr = new StreamReader($"{Directory.GetCurrentDirectory()}/assets/{templateName}.html");
+            return await sr.ReadToEndAsync();
         }
         catch (IOException e)
         {

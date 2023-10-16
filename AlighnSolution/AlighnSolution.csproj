@@ -5,39 +5,27 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>AlighnSolution</RootNamespace>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
     </PropertyGroup>
 
 
     <ItemGroup>
       <PackageReference Include="AspNetCore.Identity.Mongo" Version="8.3.3" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
+      <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.12" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
       <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
       <PackageReference Include="NUnit" Version="3.13.3" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <ItemGroup>
-      <None Include="wwwroot\EmailConfirmationTemplate.html" />
-      <None Include="wwwroot\logo.jpg" />
     </ItemGroup>
-
-
+    <ItemGroup>
+        <EmbeddedResource Include="bin\Debug\net7.0\assets\EmailConfirmationTemplate.html" />
+        <EmbeddedResource Include="Email/Templates/assets/EmailConfirmationTemplate.html" />
+        <EmbeddedResource Include="wwwroot\EmailConfirmationTemplate.html" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="bin\Debug\net7.0\assets\logo.jpg" />
+      <None Include="bin\Debug\net7.0\assets\RobotoMono-Regular.ttf" />
+      <None Include="wwwroot\logo.jpg" />
     </ItemGroup>
 
 
