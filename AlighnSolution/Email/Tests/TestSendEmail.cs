@@ -11,8 +11,8 @@ public class TestSendEmail
         var emailService = new EmailService("127.0.0.1", 1025, "bE8fbAe9gzDxnwYyISYl0A", null);
         var keyValuePair = new Dictionary<string, string>()
         {
-            {"Email_Verification_Token", "552233"},
-            {"Username", "Alighn"}
+            {"Email", "alighndev@protonmail.com"},
+            {"EmailConfirmationToken", "123456"}
         };
         var message = await emailService.LoadTemplate(EmailTemplates.EmailConfirmationTemplate);
         var emailMessage = new EmailMessage(keyValuePair, message);

@@ -50,6 +50,7 @@ public class EmailService : IEmailService
         mail.From = new MailAddress(from, title);
         mail.To.Add(new MailAddress(to));
         mail.Body = message;
+        mail.IsBodyHtml = true;
         using var smtpClient = new SmtpClient(Hostname, Port);
         smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
         smtpClient.EnableSsl = true;

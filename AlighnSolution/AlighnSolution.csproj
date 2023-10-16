@@ -20,12 +20,10 @@
     <ItemGroup>
         <EmbeddedResource Include="bin\Debug\net7.0\assets\EmailConfirmationTemplate.html" />
         <EmbeddedResource Include="Email/Templates/assets/EmailConfirmationTemplate.html" />
-        <EmbeddedResource Include="wwwroot\EmailConfirmationTemplate.html" />
     </ItemGroup>
     <ItemGroup>
       <None Include="bin\Debug\net7.0\assets\logo.jpg" />
       <None Include="bin\Debug\net7.0\assets\RobotoMono-Regular.ttf" />
-      <None Include="wwwroot\logo.jpg" />
     </ItemGroup>
 
 
